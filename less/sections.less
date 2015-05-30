@@ -6,7 +6,6 @@
 	padding-bottom: @section-padding;
 	position: relative;
 	background-color: @body-background;
-	overflow: hidden;
 
 	&.small-padding {
 		padding-top: (@section-padding - 70);
@@ -34,6 +33,7 @@
 			left: 0px;
 			.square(100%);
 			background-size: cover !important;
+			.transition(all .1s);
 			z-index: 0;
 			background-repeat: no-repeat;
 			background-attachment: fixed;
@@ -50,24 +50,6 @@
 				position: absolute;
 				top: 0px;
 				left: 0;
-			}
-		}
-		.video-background {
-			display: block !important;
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			.square(100%);
-			background-size: cover !important;
-			z-index: 0;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-			.bg-video {
-				.square(100%);
-
-				.mb_YTPBar {
-					display: none !important;
-				}
 			}
 		}
 	}
@@ -115,24 +97,12 @@
 			&:after {
 				background-color: fade(#000, 90%);
 			}
-
-			&.half-overlay {
-				&:after {
-					background-color: fade(#000, 70%);
-				}				
-			}
 		}
 		&.white-overlay {
 			.dark-light(@color-white);
 			h1, h2, h3, h4, h5, h6 {.dark-light(@color-white);}
 			&:after {
 				background-color: fade(#FFF, 90%);
-			}
-
-			&.half-overlay {
-				&:after {
-					background-color: fade(#FFF, 70%);
-				}				
 			}
 		}
 		&.primary-overlay {
@@ -149,24 +119,12 @@
 			&:after {
 				background-color: fade(@color-primary, 90%);
 			} 
-
-			&.half-overlay {
-				&:after {
-					background-color: fade(@color-primary, 70%);
-				}				
-			}
 		}
 		&.secondary-overlay {
 			.dark-light(@color-secondary);
 			h1, h2, h3, h4, h5, h6 {.dark-light(@color-secondary);}
 			&:after {
 				background-color: fade(@color-secondary, 90%);
-			}
-
-			&.half-overlay {
-				&:after {
-					background-color: fade(@color-secondary, 70%);
-				}				
 			}
 		}
 		&.info-overlay {
@@ -175,24 +133,12 @@
 			&:after {
 				background-color: fade(@color-info, 90%);
 			}
-
-			&.half-overlay {
-				&:after {
-					background-color: fade(@color-info, 70%);
-				}				
-			}
 		}
 		&.success-overlay {
 			.dark-light(@color-success);
 			h1, h2, h3, h4, h5, h6 {.dark-light(@color-success);}
 			&:after {
 				background-color: fade(@color-success, 90%);
-			}
-
-			&.half-overlay {
-				&:after {
-					background-color: fade(@color-success, 70%);
-				}				
 			}
 		}
 		&.danger-overlay {
@@ -201,24 +147,12 @@
 			&:after {
 				background-color: fade(@color-danger, 90%);
 			}
-
-			&.half-overlay {
-				&:after {
-					background-color: fade(@color-danger, 70%);
-				}				
-			}
 		}
 		&.warning-overlay {
 			.dark-light(@color-warning);
 			h1, h2, h3, h4, h5, h6 {.dark-light(@color-warning);}
 			&:after {
 				background-color: fade(@color-warning, 90%);
-			}
-
-			&.half-overlay {
-				&:after {
-					background-color: fade(@color-warning, 70%);
-				}				
 			}
 		}
 
@@ -405,8 +339,7 @@
 			transform: translateY(-50%);
 		}
 
-		&.not-overflow {
-			height: auto !important;
+		&.disable-fs {
 			padding-top: @section-padding !important;
 			padding-bottom: @section-padding !important;
 			.middle-content {
